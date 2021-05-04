@@ -37,7 +37,7 @@ def IDAT_Chunk(target):
 
 def LSB_check(target):
     print("\n\033[34m[+] Running LSB check!\033[0m\n")
-    os.system('zsteg -a {}'.format(target))
+    os.system('zsteg {}'.format(target))
     print("\n\033[32m[-] Run LSB check finish!\033[0m\n")
     print("[+] 提取方法示例：zsteg -E \"b1,rgb,lsb,xy\" lsb-1.png > out.jpg \n")
 
@@ -82,7 +82,7 @@ def F5(target):
     os.system('cd {} ; java Extract ../../../{} -e ../../../result/f5_out ; cat ../../../result/f5_out'.format(F5_dir,target))
     for i in password:
         print("\n[+] Trying {}".format(i))
-        os.system('cd {} ; java Extract ../../../{} -p {} -e ../../../result/f5_out ; cat ../../../result/f5_out'.format(F5_dir,target,i))
+        os.system('cd {} ; java Extract ../../../{} -p {} -e ../../../result/f5_out_{} ; cat ../../../result/f5_out_{}'.format(F5_dir,target,i,i,i))
     print("\n\033[32m[-] Run F5 check finish!\033[0m\n")
 
 def java_blind_water_mark(target):
